@@ -11,8 +11,6 @@ struct NilaiSiswa {
 };
 
 int penilai() {
-
-
     int numOfStudent;
     std::cout << "Masukkan jumlah siswa yang ingin di-input: ";
     std::cin >> numOfStudent;
@@ -21,8 +19,6 @@ int penilai() {
 
     for (int index = 0; index < numOfStudent; index++) {
         printf("\n Masukkan nilai siswa %d", index + 1);
-
-        // NilaiSiswa temp = {};
 
         std::cout << "\n Nilai Quiz: ";
         std::cin >> kumpulanNilaiSiswa[index].quiz;
@@ -38,16 +34,14 @@ int penilai() {
 
         std::cout << "\n Nilai UAS: ";
         std::cin >> kumpulanNilaiSiswa[index].uas;
-
-        // kumpulanNilaiSiswa.push_back(temp);
     }
 
     for (int idx = 0; idx < kumpulanNilaiSiswa.size(); ++idx) {
         auto [quiz, tugas, absensi, praktek, uas, average] = kumpulanNilaiSiswa[idx];
 
         average =  (quiz + tugas + absensi + praktek + uas ) / 5;
-        bool isStudentPassed = false;
-        printf("\n Nilai Rerata siswa %d: %d %s", idx + 1, average, isStudentPassed ? "LULUS" : "TIDAK LULUS"); // Isi value LULUS/TIDAK LULUS disini
+        bool isStudentPassed = false; // Isi value LULUS/TIDAK LULUS disini
+        printf("\n Nilai Rerata siswa %d: %d %s", idx + 1, average, isStudentPassed ? "LULUS" : "TIDAK LULUS");
     }
 
     return 0;
