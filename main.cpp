@@ -40,8 +40,17 @@ int penilai() {
         auto [quiz, tugas, absensi, praktek, uas, average] = kumpulanNilaiSiswa[idx];
 
         average =  (quiz + tugas + absensi + praktek + uas ) / 5;
-        bool isStudentPassed = false; // Isi value LULUS/TIDAK LULUS disini
-        printf("\n Nilai Rerata siswa %d: %d %s", idx + 1, average, isStudentPassed ? "LULUS" : "TIDAK LULUS");
+
+    bool isStudentPassed;
+
+    if (average >= 66) {
+        isStudentPassed = true;
+    } else {
+        isStudentPassed = false;
+    }   
+
+    printf("\n Nilai Rerata siswa %d: %d %s", idx + 1, average, isStudentPassed ? "LULUS" : "TIDAK LULUS");
+    
     }
 
     return 0;
