@@ -48,6 +48,40 @@ int penilai() {
 }
 
 int kalkulator() {
+
+    //inisialisasi variabel
+    int jamMain;
+    float hargaAwal, totalBayar, diskon;
+
+    //user input lama pemakaian dalam satuan jam
+    printf("Masukkan lama pemakaian (dalam jam):");
+    scanf("%d", &jamMain);
+
+    //perhitungan harga jika per jam nya 10000
+    hargaAwal = jamMain * 10000;
+
+    //perkondisian untuk menentukan diskon yang didapat
+    if (jamMain > 10) {
+        diskon = 0.25;
+    }else if(jamMain > 8 ){
+        diskon = 0.20;
+    } else if(jamMain > 6 ){
+        diskon = 0.15;
+    } else if(jamMain > 4){
+        diskon = 0.10;
+    } else {
+        diskon = 0.00;
+    };
+
+    //perhitungan biaya yang harus dibayar
+    totalBayar = hargaAwal - (hargaAwal * diskon);
+
+    //output result yang dikeluarkan
+    printf("\nLama pemakaian: %d jam\n", jamMain);
+    printf("Total bayar (sebelum diskon): Rp %.2f\n", hargaAwal);
+    printf("Diskon: %.0f%%\n", diskon * 100);
+    printf("Total bayar (setelah diskon): Rp %.2f\n", totalBayar);
+
     return 0;
 }
 
